@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  font-family: 'Fredoka', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px #00000030;
+}
+
+.winner-message {
+  font-size: 2rem;
+  margin: 20px;
+  color: #fff;
+  animation: blink 1s infinite;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 100px;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.cell.x {
+  color: #ff6b6b;
+}
+
+.cell.o {
+  color: #1dd1a1;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #2e86de;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1b4f72;
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: confetti-fall linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
