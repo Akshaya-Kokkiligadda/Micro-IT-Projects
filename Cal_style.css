@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.calculator {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  width: 360px;
+}
+
+.display {
+  background: #000;
+  color: #0f0;
+  font-size: 2rem;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #eee;
+  background-color: #2c2c2c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px #000;
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.2);
+}
+
+button[data-action="add"],
+button[data-action="subtract"],
+button[data-action="multiply"],
+button[data-action="divide"],
+button[data-action="percent"] {
+  background: #ff9500;
+  color: white;
+  box-shadow: 0 0 12px #ff9500aa;
+}
+
+button[data-action="equals"] {
+  background: #00c853;
+  color: white;
+  box-shadow: 0 0 12px #00c853aa;
+}
+
+button[data-action="clear"],
+button[data-action="backspace"] {
+  background: #424242;
+  color: #ccc;
+}
